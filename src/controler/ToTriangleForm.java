@@ -1,6 +1,6 @@
 package controler;
 
-import java.lang.reflect.Array;
+import model.Point;
 
 /**
  * Created by Михаил on 19.11.2016.
@@ -23,12 +23,15 @@ public class ToTriangleForm {
         return max;
     }
     */
-    public double[][] ToTriangle(double[][] matrix)
+    public static  Matrix ToTriangle(Matrix matrix)
     {
-        // i - X , j - Y; [Y][X]
-        double[][]m = new double[matrix.length][matrix[0].length];
-        m = matrix.clone();
+        // i - X , j - Y; матрица[Y][X];
+        double[][]m = new double[matrix.getMatrix().length][matrix.getMatrix()[0].length];
+        int[] srtings = matrix.getStrings();
+        String[] columns = matrix.getColumns();
+        m = matrix.getMatrix();
         Point max = new Point(0,0);
+
         //Тестовый вывод матрицы
         System.err.println();
         for(int y = 0; y < m.length; y ++) {
@@ -36,28 +39,42 @@ public class ToTriangleForm {
                 System.err.print(m[y][x] + " | ");
             System.err.println();
         }
+
         for(int i = 0; i < m[0].length; i ++)
         {
             // ищу максимальное значение в части матрицы
             for (int y = i; y < m.length; y++) {
                 for (int x = i; x < m[0].length; x++) {
-                    if (m[max.y][max.x] < m[y][x]) {
-                        max.x = x;
-                        max.y = y;
+                    if (m[max.getY()][max.getX()] < m[y][x]) {
+                        max.setX(x);
+                        max.setY(y);
                     }
                 }
             }
             // переношу его на главную диагональ, в то место, которое сейчас является нулевым элементом подматрицы
             //меняю местами строки;
-            double[] tmpY = m [max.y];
-            m[max.y] = m[i];
+            double[] tmpY = m [max.getY()];
+            m[max.getY()] = m[i];
             m[i] = tmpY;
+
+            int tmpStr = srtings[max.getY()];
+            srtings[max.getY()] = srtings[i];
+            srtings[i] = tmpStr;
+
+
+
+
+
             //меняю местами стлбцы;
             double tmpX;
+            String tmpColumn;
+            tmpColumn = columns[i];
+            columns[i] = columns[max.getX()];
+            columns[max.getX()] = tmpColumn;
             for (int x = i; x < m[0].length; x++) {
                 tmpX = m[x][i];
-                m[x][i] = m[x][max.x];
-                m[x][max.x] = tmpX;
+                m[x][i] = m[x][max.getX()];
+                m[x][max.getX()] = tmpX;
             }
 
             //Тестовый вывод матрицы
@@ -68,6 +85,7 @@ public class ToTriangleForm {
                 System.err.println();
             }
 
+            // произвожу операцию вычитания
             for (int y = i + 1; y < m.length; y++) {
                 double tmp = m[y][i] / m[i][i];
                 for (int x = i; x < m[0].length; x++) {
@@ -77,7 +95,10 @@ public class ToTriangleForm {
 
         }
 
-        return m;
+        matrix.setColumns(columns);
+        matrix.setStrings(srtings);
+        matrix.setMatrix(m);
+        return matrix;
 
     }
 }
