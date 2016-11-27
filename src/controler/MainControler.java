@@ -1,5 +1,7 @@
 package controler;
 
+import model.exception.ThereInNoSolution;
+
 /**
  * Created by Михаил on 19.11.2016.
  */
@@ -20,7 +22,8 @@ public class MainControler {
             System.err.println();
         }
         double result = 0;
-        result = FindDef.findDef(mat);
+        try{result = FindDef.findDef(mat);}
+        catch (ThereInNoSolution ex){}
         System.err.println(result);
     }
 }

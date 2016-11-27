@@ -8,9 +8,9 @@ import model.exception.ThereInNoSolution;
  */
 
 public class ToTriangleForm  {
-    private Point size;
+   // private Point size;
 
-    private  Matrix matrix;
+   // private  Matrix matrix;
     // Unusing Api, come back later
    /* private Point findMax(double[][] mat){
         Point max = new Point(0,0);
