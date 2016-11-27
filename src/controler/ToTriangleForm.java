@@ -1,14 +1,16 @@
 package controler;
 
 import model.Point;
+import model.exception.ThereInNoSolution;
 
 /**
  * Created by Михаил on 19.11.2016.
  */
-public class ToTriangleForm {
-    private Point size;
 
-    private  Matrix matrix;
+public class ToTriangleForm  {
+   // private Point size;
+
+   // private  Matrix matrix;
     // Unusing Api, come back later
    /* private Point findMax(double[][] mat){
         Point max = new Point(0,0);
@@ -23,7 +25,7 @@ public class ToTriangleForm {
         return max;
     }
     */
-    public static  Matrix ToTriangle(Matrix matrix)
+    public static  Matrix ToTriangle(Matrix matrix) throws ThereInNoSolution
     {
         // i - X , j - Y; матрица[Y][X];
         double[][]m = new double[matrix.getMatrix().length][matrix.getMatrix()[0].length];
@@ -92,6 +94,8 @@ public class ToTriangleForm {
                     m[y][x] -= tmp * m[i][x];
                 }
             }
+            throw new ThereInNoSolution();
+
 
         }
 

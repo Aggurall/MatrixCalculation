@@ -5,14 +5,14 @@ package controler;
  */
 public class FindDef {
     private  Matrix matrix;
-    public static double findDef(Matrix matrix)
+    public double findDef(double[][] matrix)
     {
-
-        matrix = (ToTriangleForm.ToTriangle(matrix));
-        double def = matrix.getMatrix()[0][0];
-        for(int i = 0; i < matrix.getMatrix().length; i++)
+        ToTriangleForm t = new ToTriangleForm();
+        matrix = (t.ToTriangle(matrix)).clone();
+        double def = matrix[0][0];
+        for(int i = 0; i < matrix.length; i++)
         {
-            def *= matrix.getMatrix()[i][i];
+            def *= matrix[i][i];
         }
         return  def;
     }
