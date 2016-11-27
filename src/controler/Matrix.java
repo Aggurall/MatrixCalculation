@@ -6,12 +6,36 @@ package controler;
 
 public class Matrix {
     int [] strings;
-    int [] columns;
-    int [][] matrix;
-    Matrix(int m[][])
+    String [] columns;
+    double [][] matrix;
+    Matrix(double m[][])
     {
         matrix = m;
         strings = new int[m.length];
-        columns = new int[m[0].length];
+        columns = new String[m[0].length];
+    }
+
+    public int[] getStrings() {
+        return strings;
+    }
+
+    public void setStrings(int[] strings) {
+        this.strings = strings;
+    }
+
+    public String[] getColumns() {
+        return columns;
+    }
+
+    public void setColumns(String[] columns) {
+        this.columns = columns;
+    }
+
+    public double[][] getMatrix() {
+        return matrix;
+    }
+
+    public void setMatrix(double[][] matrix) {
+        this.matrix = matrix;
     }
 }

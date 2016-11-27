@@ -1,18 +1,24 @@
 package controler;
 
+import model.exception.ThereInNoSolution;
+
 /**
  * Created by Михаил on 19.11.2016.
  */
 public class FindDef {
     private  Matrix matrix;
-    public double findDef(double[][] matrix)
+    public static  double findDef(Matrix matrix) throws ThereInNoSolution
     {
-        ToTriangleForm t = new ToTriangleForm();
-        matrix = (t.ToTriangle(matrix)).clone();
-        double def = matrix[0][0];
-        for(int i = 0; i < matrix.length; i++)
+
+        try {
+            matrix = (ToTriangleForm.ToTriangle(matrix));
+        }
+        catch (ThereInNoSolution ex){}
+
+        double def = matrix.getMatrix()[0][0];
+        for(int i = 0; i < matrix.getMatrix().length; i++)
         {
-            def *= matrix[i][i];
+            def *= matrix.getMatrix()[i][i];
         }
         return  def;
     }
