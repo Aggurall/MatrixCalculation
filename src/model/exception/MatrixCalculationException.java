@@ -1,4 +1,4 @@
 package model.exception;
 
-public class MatrixCalculationException {
+public class MatrixCalculationException extends Exception{
 }
