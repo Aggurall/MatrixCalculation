@@ -56,8 +56,8 @@
       <file leaf-file-name="ToTriangleForm.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/controler/ToTriangleForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2156">
-              <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+            <state relative-caret-position="418">
+              <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -510,6 +510,14 @@
       <option name="presentableId" value="Default" />
       <updated>1480182175102</updated>
     </task>
+    <task id="LOCAL-00001" summary="Workspace починил">
+      <created>1480243432012</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1480243432012</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -578,6 +586,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Workspace починил" />
+    <option name="LAST_COMMIT_MESSAGE" value="Workspace починил" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -882,8 +894,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controler/ToTriangleForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2156">
-          <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+        <state relative-caret-position="418">
+          <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
