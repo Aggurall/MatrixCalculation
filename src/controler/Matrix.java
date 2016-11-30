@@ -5,14 +5,24 @@ package controler;
  */
 
 public class Matrix {
-    int [] strings;
-    String [] columns;
-    double [][] matrix;
-    Matrix(double m[][])
+    private int [] strings;
+    private String [] columns;
+    private double [][] matrix;
+    private double [][] solut;
+    Matrix(double m[][], double[][] _solut)
     {
+        solut = _solut;
         matrix = m;
         strings = new int[m.length];
         columns = new String[m[0].length];
+    }
+
+    public double[][] getSolut() {
+        return solut;
+    }
+
+    public void setSolut(double[][] solut) {
+        this.solut = solut;
     }
 
     public int[] getStrings() {

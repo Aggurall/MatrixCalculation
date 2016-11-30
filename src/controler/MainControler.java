@@ -6,14 +6,14 @@ import model.exception.ThereInNoSolution;
  * Created by Михаил on 19.11.2016.
  */
 public class MainControler {
-    public static void main(String args[])
+    public static void main(String args[])throws ThereInNoSolution
     {
         double[][] matrix = new double [2][2];
         matrix[0][0] = 1;
         matrix[0][1] = 2;
         matrix[1][0] = 4;
         matrix[1][1] = 9;
-        Matrix mat = new Matrix(matrix);
+        Matrix mat = new Matrix(matrix,null);
         //Тестовый вывод матрицы
         System.err.println();
         for(int y = 0; y < matrix.length; y ++) {
@@ -22,8 +22,11 @@ public class MainControler {
             System.err.println();
         }
         double result = 0;
-        try{result = FindDef.findDef(mat);}
-        catch (ThereInNoSolution ex){}
+        try {
+            result = FindDef.findDef(mat);
+        }
+        catch (ThereInNoSolution ex){};
+
         System.err.println(result);
     }
 }
