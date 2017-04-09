@@ -1,31 +1,12 @@
 package controler;
 
+import model.Matrix;
 import model.Point;
-import model.exception.ThereInNoSolution;
-
-/**
- * Created by Михаил on 19.11.2016.
- */
+import model.exception.*;
 
 public class ToTriangleForm  {
-   // private Point size;
 
-   // private  Matrix matrix;
-    // Unusing Api, come back later
-   /* private Point findMax(double[][] mat){
-        Point max = new Point(0,0);
-        for (int i = 0; i < mat.length; i++) {
-            for (int j = 0; j < mat[0].length; j++) {
-                if (mat[max.x][max.y] < mat[i][j]) {
-                    max.x = i;
-                    max.y = j;
-                }
-            }
-        }
-        return max;
-    }
-    */
-    public static  Matrix ToTriangle(Matrix matrix) throws ThereInNoSolution
+    public static Matrix ToTriangle(Matrix matrix) throws NoSolution
     {
         // i - X , j - Y; матрица[Y][X];
         double[][]m = new double[matrix.getMatrix().length][matrix.getMatrix()[0].length];
@@ -94,7 +75,7 @@ public class ToTriangleForm  {
                     m[y][x] -= tmp * m[i][x];
                 }
             }
-            throw new ThereInNoSolution();
+            throw new NoSolution();
 
 
         }
@@ -106,6 +87,23 @@ public class ToTriangleForm  {
 
     }
 }
+// private Point size;
+
+// private  Matrix matrix;
+// Unusing Api, come back later
+   /* private Point findMax(double[][] mat){
+        Point max = new Point(0,0);
+        for (int i = 0; i < mat.length; i++) {
+            for (int j = 0; j < mat[0].length; j++) {
+                if (mat[max.x][max.y] < mat[i][j]) {
+                    max.x = i;
+                    max.y = j;
+                }
+            }
+        }
+        return max;
+    }
+    */
 
 /*if((int)(m.length - 1) > 0 )//|| m[0][0] < 0.1E-6 )
         {
