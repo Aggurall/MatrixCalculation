@@ -1,30 +1,17 @@
-package controler;
-
-/**
- * Created by Михаил on 19.11.2016.
- */
+package model;
 
 public class Matrix {
     private int [] strings;
     private String [] columns;
     private double [][] matrix;
     private double [][] solut;
-    Matrix(double m[][], double[][] _solut)
+    public Matrix(double matrix[][], double[][] solut)
     {
-        solut = _solut;
-        matrix = m;
-        strings = new int[m.length];
-        columns = new String[m[0].length];
-    }
-
-    public double[][] getSolut() {
-        return solut;
-    }
-
-    public void setSolut(double[][] solut) {
         this.solut = solut;
+        this.matrix = matrix;
+        strings = new int[matrix.length];
+        columns = new String[matrix[0].length];
     }
-
     public int[] getStrings() {
         return strings;
     }
@@ -48,4 +35,13 @@ public class Matrix {
     public void setMatrix(double[][] matrix) {
         this.matrix = matrix;
     }
+
+    public double[][] getSolut() {
+        return solut;
+    }
+
+    public void setSolut(double[][] solut) {
+        this.solut = solut;
+    }
+
 }
