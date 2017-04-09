@@ -15,7 +15,7 @@ public class Field {
         this.column = column;
     }
 
-    double [][] field  = new double[line][column];
+    private double [][] field  = new double[line][column];
 
     public int[] getSize() {
         int[] size = {line, column};
