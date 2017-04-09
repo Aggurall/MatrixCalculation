@@ -5,17 +5,13 @@ import java.util.Date;
 
 public class Field {
 
-
     private int line;
     private int column;
-
 
     public Field(final int line, final int column) {
         this.line = line;
         this.column = column;
     }
-
-    private double [][] field  = new double[line][column];
 
     public int[] getSize() {
         int[] size = {line, column};
@@ -29,9 +25,6 @@ public class Field {
     public double getNumber (final Point point){
         return  field[point.getX()][point.getY()];
     }
-
-    private ArrayList<String> bindingColumns = new ArrayList<>();
-
     public void setBindingColumns(ArrayList<String> bindingColumns) {
         this.bindingColumns = bindingColumns;
     }
@@ -40,8 +33,6 @@ public class Field {
         return bindingColumns;
     }
 
-    private int[] bindingLines = new int[line];
-
     public void setBindingLines(int[] bindingLines) {
         this.bindingLines = bindingLines;
     }
@@ -49,4 +40,11 @@ public class Field {
     public int[] getBindingLines() {
         return bindingLines;
     }
+
+    private double [][] field  = new double[line][column];
+
+    private ArrayList<String> bindingColumns = new ArrayList<>();
+
+    private int[] bindingLines = new int[line];
+
 }
