@@ -9,19 +9,11 @@ public class ToTriangleForm  {
     public static Matrix ToTriangle(Matrix matrix) throws NoSolution
     {
         // i - X , j - Y; матрица[Y][X];
-        double[][]m = new double[matrix.getMatrix().length][matrix.getMatrix()[0].length];
+        double[][]m;//Why write this?  = new double[matrix.getMatrix().length][matrix.getMatrix()[0].length];
         int[] srtings = matrix.getStrings();
         String[] columns = matrix.getColumns();
         m = matrix.getMatrix();
         Point max = new Point(0,0);
-
-        //Тестовый вывод матрицы
-        System.err.println();
-        for(int y = 0; y < m.length; y ++) {
-            for (int x = 0; x < m[0].length; x++)
-                System.err.print(m[y][x] + " | ");
-            System.err.println();
-        }
 
         for(int i = 0; i < m[0].length; i ++)
         {
@@ -44,10 +36,6 @@ public class ToTriangleForm  {
             srtings[max.getY()] = srtings[i];
             srtings[i] = tmpStr;
 
-
-
-
-
             //меняю местами стлбцы;
             double tmpX;
             String tmpColumn;
@@ -60,14 +48,6 @@ public class ToTriangleForm  {
                 m[x][max.getX()] = tmpX;
             }
 
-            //Тестовый вывод матрицы
-            System.err.println();
-            for(int y = 0; y < m.length; y ++) {
-                for (int x = 0; x < m[0].length; x++)
-                    System.err.print(m[y][x] + " | ");
-                System.err.println();
-            }
-
             // произвожу операцию вычитания
             for (int y = i + 1; y < m.length; y++) {
                 double tmp = m[y][i] / m[i][i];
@@ -75,9 +55,6 @@ public class ToTriangleForm  {
                     m[y][x] -= tmp * m[i][x];
                 }
             }
-            throw new NoSolution();
-
-
         }
 
         matrix.setColumns(columns);
@@ -87,6 +64,8 @@ public class ToTriangleForm  {
 
     }
 }
+
+
 // private Point size;
 
 // private  Matrix matrix;
